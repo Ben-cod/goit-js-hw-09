@@ -1,47 +1,29 @@
-// const startButton = document.querySelector('[data-start]');
-// const stopButton = document.querySelector('[data-stop]');
 
-// let intervalId = null;
-
-// startButton.addEventListener('click', startColorChange);
-// stopButton.addEventListener('click', stopColorChange);
-
-// function startColorChange() {
-//   startButton.disabled = true; // Вимикаємо кнопку "Start"
-//   intervalId = setInterval(changeBackgroundColor, 1000);
-// };
-
-  
-//   function stopColorChange() {
-//     startButton.disabled = false; // Увімкнюємо кнопку "Start"
-//     clearInterval(intervalId);
-//   }
-//   function changeBackgroundColor() {
-//     const randomColor = getRandomHexColor();
-//     document.body.style.backgroundColor = randomColor;
-//   }
  
-  const botumOn = document.querySelector('data-start');
-  const botumOff = document.querySelector('data-stop');
+  const botumOn = document.querySelector('[data-start]');
+  const botumOff = document.querySelector('[data-stop]');
   let intervalId = null;
-  
-  botumOn.addEventListener(click, startColorChange);
-  botumOff.addEventListener(click, stopColorChange);
-  
 
-  function startColorChange(){
+  botumOn.addEventListener('click', startColorChange);
+  botumOff.addEventListener('click', stopColorChange);
+  
+  botumOn.classList.add('btn');
+  botumOff.classList.add('btn');
+
+  function startColorChange() {
     botumOn.disabled = true;
     intervalId = setInterval(changeBackgroundColor, 1000)
+  
   };
 
-  function stopColorChange(){
+  function stopColorChange() {
     botumOn.disabled = false;
     clearInterval(intervalId);
   };
 
-  function changeBackgroundColor(){
+  function changeBackgroundColor() {
     const randomColor = getRandomHexColor();
-    document.body.style.background = randomColor;
+    document.body.style.backgroundColor = randomColor;
   };
 
   function getRandomHexColor() {
