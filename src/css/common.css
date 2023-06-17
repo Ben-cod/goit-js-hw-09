@@ -10,7 +10,7 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
-  display: flex;
+  
   
 }
 
@@ -20,8 +20,8 @@ img {
 }
 .container{
  display: flex;
- margin-left: auto;
- margin-right: auto;
+ justify-content: center;
+ padding-top: 150px;
 }
 
 .btn{
@@ -31,5 +31,22 @@ width: 150px;
 height: 150px;
 border-radius: 40%;
 color:blue;
-
+}
+.timer{
+  display: flex;
+}
+.field{
+  /* display: block; */
+  /* display: flex; */
+  justify-content: space-around;
+  gap: 20px;
+}
+.value{
+font-size: 28;
+  display: block;
+  gap: 20px;
+}
+.label{
+  font-size: 18px;
+margin-right: 10px;
 }
