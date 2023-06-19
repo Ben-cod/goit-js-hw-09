@@ -10,22 +10,42 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
-  
-  
+ 
 }
+
 
 img {
   display: block;
   max-width: 100%;
 }
+
+
 .container{
  display: flex;
  justify-content: center;
- padding-top: 150px;
+ height: 100vh;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 188px;
+	padding-bottom: 188px;
+	
+}
+.box{
+  max-width: 100%;
+  height: 100vh;
+	padding-top: 188px;
+	padding-bottom: 188px;
+	background-image: 
+  url(/src/img/fon1\ \(1\).jpg);
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 .btn{
-background-color: aquamarine;
+  background-image: 
+  url(/src/img/fon1\ \(1\).jpg);
+background-size: cover;
+background-repeat: no-repeat;
 font-size: xx-large;
 width: 150px;
 height: 150px;
@@ -36,8 +56,6 @@ color:blue;
   display: flex;
 }
 .field{
-  /* display: block; */
-  /* display: flex; */
   justify-content: space-around;
   gap: 20px;
 }

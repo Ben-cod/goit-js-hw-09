@@ -2,56 +2,53 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from "notiflix";
 
-const datetimePicker = document.getElementById("datetime-picker");
-const startButton = document.querySelector("[data-start]");
-const daysValue = document.querySelector("[data-days]");
-const hoursValue = document.querySelector("[data-hours]");
-const minutesValue = document.querySelector("[data-minutes]");
-const secondsValue = document.querySelector("[data-seconds]");
+const dataInput = document.querySelector('#datetime-picker');
+const btnStart = document.querySelector('[data-start]');
+const daysValue = document.querySelector('[data-days]');
+const hoursValue = document.querySelector('[data-hours]');
+const minutesValue = document.querySelector('[data-minutes]');
+const secondsValue = document.querySelector('[data-seconds]');
 
-let countdownInterval;
 let targetDate;
+let countDownInterval ;
 
-flatpickr(datetimePicker, {
+flatpickr(dataInput, {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
-    if (selectedDate < new Date()) {
-      Notiflix.Notify.warning("Please choose a date in the future");
-      startButton.disabled = true;
-    } else {
-      startButton.disabled = false;
+    if(selectedDates < new Date()){
+     Notiflix.Notify.warning("Please choose a date in the future");
+      btnStart.disabled = true;
+    }else{
+      btnStart.disabled = false;
       targetDate = selectedDate;
     }
   },
 });
+btnStart.addEventListener('click', () => {
+  btnStart.disabled = true;
 
-startButton.addEventListener("click", () => {
-  startButton.disabled = true;
-
-  countdownInterval = setInterval(() => {
+  countDownInterval = setInterval(() => {
     const timeLeft = targetDate - new Date();
-    if (timeLeft <= 0) {
-      clearInterval(countdownInterval);
-      updateTimerDisplay(0);
+    if(timeLeft <= 0){
+      clearInterval(countDownInterval);
+      updateTimerDisplay(0)
       Notiflix.Notify.success("Countdown completed!");
-    } else {
+    }else {
       updateTimerDisplay(timeLeft);
     }
   }, 1000);
 });
-
-function updateTimerDisplay(time) {
-  const { days, hours, minutes, seconds } = convertMs(time);
-
+function updateTimerDisplay(time){
+  const { days, hours, minutes, seconds} = convertMs(time);
   daysValue.textContent = addLeadingZero(days);
   hoursValue.textContent = addLeadingZero(hours);
   minutesValue.textContent = addLeadingZero(minutes);
-  secondsValue.textContent = addLeadingZero(seconds);
-}
+  secondsValue.textContent = addLeadingZero(seconds)
+};
 
 function convertMs(ms) {
   const second = 1000;
@@ -63,10 +60,9 @@ function convertMs(ms) {
   const hours = Math.floor((ms % day) / hour);
   const minutes = Math.floor(((ms % day) % hour) / minute);
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
-
   return { days, hours, minutes, seconds };
-}
-
+};
 function addLeadingZero(value) {
-  return value.toString().padStart(2, "0");
-}
+    return value.toString().padStart(2, "0");
+  };
+
