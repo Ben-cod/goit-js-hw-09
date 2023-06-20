@@ -21,7 +21,8 @@
 
  function changeBackgroundColor(){
   const randomColor = getRandomHexColor();
-  document.body.style.backgroundColor = randomColor;
+  botumOn.style.backgroundColor = randomColor;
+  botumOff.style.backgroundColor = randomColor;
  }
 
   function getRandomHexColor() {

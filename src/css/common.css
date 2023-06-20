@@ -10,7 +10,10 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
- 
+  background-image: 
+  url(/src/img/fon.jpg);
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 
@@ -42,15 +45,12 @@ background-repeat: no-repeat;
 }
 
 .btn{
-  background-image: 
-  url(/src/img/fon1\ \(1\).jpg);
-background-size: cover;
-background-repeat: no-repeat;
 font-size: xx-large;
 width: 150px;
 height: 150px;
 border-radius: 40%;
 color:blue;
+margin-right: 20px;
 }
 .timer{
   display: flex;
