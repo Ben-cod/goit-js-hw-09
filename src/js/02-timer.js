@@ -11,6 +11,7 @@ const secondsValue = document.querySelector('[data-seconds]');
 
 let targetDate;
 let countDownInterval ;
+btnStart.disabled = true;
 
 flatpickr(dataInput, {
   enableTime: true,
@@ -19,7 +20,7 @@ flatpickr(dataInput, {
   minuteIncrement: 1,
   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
-    if(selectedDates < new Date()){
+    if(selectedDate < new Date()){
      Notiflix.Notify.warning("Please choose a date in the future");
       btnStart.disabled = true;
     }else{
@@ -29,7 +30,7 @@ flatpickr(dataInput, {
   },
 });
 btnStart.addEventListener('click', () => {
-  btnStart.disabled = true;
+  
 
   countDownInterval = setInterval(() => {
     const timeLeft = targetDate - new Date();
