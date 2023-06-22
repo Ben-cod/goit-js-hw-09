@@ -15,7 +15,26 @@ body {
 background-size: cover;
 background-repeat: no-repeat;
 }
+li{
+  list-style: none;
+  
 
+}
+.list{
+  text-decoration: none;
+}
+.index-box{
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+}
+.index-list{
+  background-color: #fafafa;
+  padding: 15px 30px;
+  margin-right: 30px;
+  border-radius: 35%;
+  text-decoration: none;
+}
 
 img {
   display: block;
@@ -38,10 +57,6 @@ img {
   height: 100vh;
 	padding-top: 188px;
 	padding-bottom: 188px;
-	background-image: 
-  url(/src/img/fon1\ \(1\).jpg);
-background-size: cover;
-background-repeat: no-repeat;
 }
 
 .btn{
@@ -67,4 +82,17 @@ font-size: 28;
 .label{
   font-size: 18px;
 margin-right: 10px;
+}
+.tumb{
+  display: flex;
+ 
+
+}
+
+
+.item {
+width: 100px;
+height: 100px;
+ background-color: #212121;
+ margin-right: 12px;
 }
